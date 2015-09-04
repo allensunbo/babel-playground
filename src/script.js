@@ -18,11 +18,11 @@ function getUserById(id) {
   })
 }
 
-var p1 = getUserById('2'), p2 = getUserById('1'), p3 = getUserById(3);
+var p1 = getUserById('2'), p2 = getUserById('1');
 Promise.all([p1, p2])
   .then((data)=> {
     console.log(data);
-    return p3;
+    return getUserById(3);
   })
   .catch(err=> {
     console.log(err);

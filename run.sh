@@ -1,1 +1,1 @@
-babel script.js --watch --out-file script-compiled.js
+babel script.js --modules common --source-maps --watch --out-file script-compiled.js

@@ -1,6 +1,3 @@
-// require("source-map-support").install();
-require("babel/polyfill");
-
 var users = [{
   id: '1',
   name: 'Alex'
@@ -41,7 +38,7 @@ Promise.all([p1, p2])
   });
 
 
-var sum = (x, y = 10, z) => x + y + z;
+var sum = ((x, y = 10, z) => x + y + z);
 
 
 console.log(sum(...[1, 2, 4]));
@@ -106,3 +103,6 @@ for (let n of prime) {
   if (n > 20) break;
   console.log(n);
 }
+
+import {sum2, pi} from "./lib/math";
+console.log("2π = " + sum2(pi, pi));

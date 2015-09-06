@@ -121,3 +121,16 @@ console.log('TEN_FOO=' + foo.TEN)
 import * as bar from './lib/bar'
 console.log(bar.TEN);
 
+import {isTestable} from './baz';
+
+@isTestable(true)
+class MyClass {
+
+}
+
+if(MyClass.isTestable) {
+ console.log('isTestable=true')
+} else {
+ console.log('isTestable=false')
+ 
+}

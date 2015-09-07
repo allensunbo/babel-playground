@@ -125,12 +125,24 @@ import {isTestable} from './baz';
 
 @isTestable(true)
 class MyClass {
+  constructor(flag) {
+    this.flag = flag;
+  }
+
+  static instance() {
+
+    if(MyClass.isTestable) {
+        // console.log('isTestable=true')
+        return new MyClass(MyClass.isTestable)
+    } else {
+        //console.log('isTestable=false')
+        return new MyClass(MyClass.isTestable)
+    }
+  }
 
 }
 
-if(MyClass.isTestable) {
- console.log('isTestable=true')
-} else {
- console.log('isTestable=false')
- 
-}
+
+
+console.log(MyClass.instance())
+// 
